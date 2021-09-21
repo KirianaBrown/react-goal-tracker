@@ -3,11 +3,23 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient( to right top, hsl(220, 73%, 57%), hsl(200, 73%, 57%), hsl(205, 73%, 57%));
 }
 
 .app {
-    height: 100vh;
     margin: 0 auto;
-    background-color: orange;
-    background: linear-gradient( to right bottom, hsl(45, 13%, 82%), hsl(45, 13%, 85%), hsl(43, 12%, 96%));
+    padding: 2rem;
+    height: 70vh;
+    width: 70vw;
+    border-radius: 10px;
+    box-shadow: 8px 4px 10px 1px hsl(210, 73%, 57%);
+    background-color: hsla(225, 73%, 57%, 20%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

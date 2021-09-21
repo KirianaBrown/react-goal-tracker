@@ -7,7 +7,7 @@ const Goals = (props) => {
   };
 
   return (
-    <ul>
+    <ul className="goals-list">
       {props.goals_data.map((el) => (
         <GoalItem key={el.id} id={el.id} onDelete={deleteItem}>
           {el.description}

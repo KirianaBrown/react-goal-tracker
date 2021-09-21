@@ -5,7 +5,11 @@ const GoalItem = (props) => {
     props.onDelete(props.id);
   };
 
-  return <li onClick={onClickDeleteHandler}>{props.children}</li>;
+  return (
+    <li className="goal-item" onClick={onClickDeleteHandler}>
+      {props.children}
+    </li>
+  );
 };
 
 export default GoalItem;

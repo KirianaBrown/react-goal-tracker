@@ -1,0 +1,26 @@
+.form-group {
+    width: 100%;
+}
+
+.form-header {
+    color: hsl(225, 73%, 47%);
+}
+
+.form-input {
+    width: 80%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: transparent;
+}
+
+.button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    width: 40%;
+    background-color: #0475e6;
+    color: white;
+    letter-spacing: 1.2px;
+    box-shadow: 8px 4px 10px 1px hsl(210, 73%, 57%);
+}
