@@ -1,9 +1,9 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import NewGoal from "./Components/NewGoal/NewGoal";
 import Goals from "./Components/Goals/Goals";
 import GoalItem from "./Components/Goals/GoalItem";
 
-const goals_data = [
+const DUMMY_DATA = [
   {
     id: 1,
     description: "Learn React!",
@@ -23,20 +23,30 @@ const goals_data = [
 ];
 
 const App = () => {
+  const [goalsData, setGoalsData] = useState(DUMMY_DATA);
+
   const onAddNewGoalHandler = (new_goal_item) => {
-    console.log("New Goal Added");
-    console.log(new_goal_item);
+    const new_item = {
+      id: Math.random(),
+      description: new_goal_item,
+    };
+
+    setGoalsData((prevState) => {
+      return [...prevState, new_item];
+    });
   };
 
-  const onDeleteGoalHandler = (goal_item_id) => {
-    console.log("Goal To be Deleted");
-    console.log(goal_item_id);
+  const onDeleteGoalHandler = (goal_id) => {
+    setGoalsData((prevState) => {
+      const updatedGoals = prevState.filter((goal) => goal.id !== goal_id);
+      return updatedGoals;
+    });
   };
 
   return (
     <Fragment>
       <NewGoal onAddNewGoal={onAddNewGoalHandler} />
-      <Goals goals_data={goals_data} onDeleteItem={onDeleteGoalHandler} />
+      <Goals goals_data={goalsData} onDeleteItem={onDeleteGoalHandler} />
     </Fragment>
   );
 };

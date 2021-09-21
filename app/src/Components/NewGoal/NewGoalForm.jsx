@@ -11,6 +11,7 @@ const NewGoalForm = (props) => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
+
     if (newGoal.length > 0) {
       props.onGetNewGoal(newGoal);
       setNewGoal("");
