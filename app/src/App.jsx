@@ -1,6 +1,7 @@
-import { useState } from "react";
-import NewGoal from "./Components/NewGoal/NewGoal";
-import Goals from "./Components/Goals/Goals";
+import { useState, Fragment } from "react";
+import Header from "./Components/Ui/Header";
+import Sidebar from "./Components/Sidebar/Sidebar";
+import Content from "./Components/Content";
 
 const DUMMY_DATA = [
   {
@@ -21,8 +22,32 @@ const DUMMY_DATA = [
   },
 ];
 
+const DUMMY_TAGS = [
+  {
+    id: Math.random(),
+    title: "Home",
+    color: "purple",
+  },
+  {
+    id: Math.random(),
+    title: "Work",
+    color: "orange",
+  },
+  {
+    id: Math.random(),
+    title: "Personal",
+    color: "green",
+  },
+  {
+    id: Math.random(),
+    title: "Development",
+    color: "blue",
+  },
+];
+
 const App = () => {
   const [goalsData, setGoalsData] = useState(DUMMY_DATA);
+  const [tags, setTags] = useState(DUMMY_TAGS);
 
   const onAddNewGoalHandler = (new_goal_item) => {
     const new_item = {
@@ -43,10 +68,17 @@ const App = () => {
   };
 
   return (
-    <div className="app">
-      <NewGoal onAddNewGoal={onAddNewGoalHandler} />
-      <Goals goals_data={goalsData} onDeleteItem={onDeleteGoalHandler} />
-    </div>
+    <Fragment>
+      <Header />
+      <div className="container">
+        <Sidebar tags={tags} />
+        <Content
+          onAddNewGoal={onAddNewGoalHandler}
+          goals_data={goalsData}
+          onDeleteItem={onDeleteGoalHandler}
+        />
+      </div>
+    </Fragment>
   );
 };
 
