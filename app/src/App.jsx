@@ -1,7 +1,6 @@
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import NewGoal from "./Components/NewGoal/NewGoal";
 import Goals from "./Components/Goals/Goals";
-import GoalItem from "./Components/Goals/GoalItem";
 
 const DUMMY_DATA = [
   {
@@ -44,10 +43,10 @@ const App = () => {
   };
 
   return (
-    <Fragment>
+    <div className="app">
       <NewGoal onAddNewGoal={onAddNewGoalHandler} />
       <Goals goals_data={goalsData} onDeleteItem={onDeleteGoalHandler} />
-    </Fragment>
+    </div>
   );
 };
 
