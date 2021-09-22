@@ -7,18 +7,22 @@ const DUMMY_DATA = [
   {
     id: 1,
     description: "Learn React!",
+    category: "Home",
   },
   {
     id: 2,
     description: "Finish the Course",
+    category: "Development",
   },
   {
     id: 3,
     description: "Build Portfolio",
+    category: "Personal",
   },
   {
     id: 4,
     description: "Learn Gatsby!",
+    category: "Development",
   },
 ];
 

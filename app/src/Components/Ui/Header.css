@@ -1,0 +1,19 @@
+.header {
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.logo {
+    /* fill: salmon; */
+    fill: rgb(21, 95, 21);
+}
+
+.title {
+    /* color: hsl(6, 93%, 81%); */
+    color: #156015;
+    text-transform: uppercase;
+    font-size: 0.6rem;
+    margin-left: 1rem;
+}

@@ -1,6 +1,40 @@
 import { useState } from "react";
+import styled from "styled-components";
 
-import "./NewGoalForm.css";
+const Form = styled.form`
+  display: flex;
+  padding: 0.5rem;
+  align-items: center;
+`;
+
+const Select = styled.select`
+  padding: 0.5rem;
+  width: 60%;
+  border: none;
+  border-radius: 10px;
+  margin-left: 1rem;
+  outline: none;
+`;
+
+const Button = styled.button`
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  width: 40%;
+  cursor: pointer;
+`;
+
+const Input = styled.input`
+  width: 90%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: transparent;
+`;
+
+const Div = styled.div`
+  width: 100%;
+`;
 
 const NewGoalForm = (props) => {
   const [newGoal, setNewGoal] = useState("");
@@ -19,20 +53,25 @@ const NewGoalForm = (props) => {
   };
 
   return (
-    <form onSubmit={onSubmitHandler}>
-      <h4 className="form-header">Course Goals</h4>
-      <div className="form-group">
-        <input
+    <Form onSubmit={onSubmitHandler}>
+      <Div>
+        <Input
           type="text"
           onChange={onInputChangeHandler}
           value={newGoal}
-          className="form-input"
+          placeholder="Your goal"
         />
-      </div>
-      <button type="submit" className="button">
-        Add Goal
-      </button>
-    </form>
+      </Div>
+      <Div>
+        <Select>
+          <option>Home</option>
+          <option>Home</option>
+          <option>Home</option>
+          <option>Home</option>
+        </Select>
+      </Div>
+      <Button type="submit">Add Goal</Button>
+    </Form>
   );
 };
 
