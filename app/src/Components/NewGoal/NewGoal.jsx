@@ -2,7 +2,7 @@ import NewGoalForm from "./NewGoalForm";
 import styled from "styled-components";
 
 const Div = styled.div`
-  width: 60%;
+  width: 80%;
   padding: 1rem 2rem;
   border-radius: 15px;
   border: 1px solid #e9ecef;

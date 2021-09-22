@@ -17,11 +17,16 @@ const Div = styled.div`
   align-items: center;
 `;
 
+const SubHeading = styled.h6`
+  color: rgb(21, 95, 21);
+`;
+
 const ContentHeading = () => {
   return (
     <Div>
       <Image src={contentImage} alt="landing content for goals" />
       <Heading>
+        <SubHeading>Take charge of your Goals </SubHeading>
         "The great danger for most of us lies not in setting our aim too high
         and falling short; but in setting our aim too low, and achieving our
         mark." –Michelangelo

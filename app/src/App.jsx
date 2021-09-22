@@ -3,29 +3,6 @@ import Header from "./Components/Ui/Header";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import Content from "./Components/Content";
 
-const DUMMY_DATA = [
-  {
-    id: 1,
-    description: "Learn React!",
-    category: "Home",
-  },
-  {
-    id: 2,
-    description: "Finish the Course",
-    category: "Development",
-  },
-  {
-    id: 3,
-    description: "Build Portfolio",
-    category: "Personal",
-  },
-  {
-    id: 4,
-    description: "Learn Gatsby!",
-    category: "Development",
-  },
-];
-
 const TAG_COLORS = [
   "hsl(120, 64%, 22%)",
   "hsl(120, 64%, 42%)",
@@ -37,6 +14,33 @@ const TAG_COLORS = [
   "hsl(100, 84%, 22%)",
   "hsl(100, 84%, 12%)",
   "hsl(100, 84%, 82%)",
+];
+
+const DUMMY_DATA = [
+  {
+    id: 1,
+    description: "Learn React!",
+    category: "Home",
+    color: TAG_COLORS[0],
+  },
+  {
+    id: 2,
+    description: "Finish the Course",
+    category: "Development",
+    color: TAG_COLORS[3],
+  },
+  {
+    id: 3,
+    description: "Build Portfolio",
+    category: "Personal",
+    color: TAG_COLORS[2],
+  },
+  {
+    id: 4,
+    description: "Learn Gatsby!",
+    category: "Development",
+    color: TAG_COLORS[3],
+  },
 ];
 
 const DUMMY_TAGS = [

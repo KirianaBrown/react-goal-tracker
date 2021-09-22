@@ -6,28 +6,26 @@ const Form = styled.form`
 `;
 
 const Input = styled.input`
-  border: #e9ecef 1px solid;
-  background-color: #e9ecef;
+  border: none;
+  background: transparent;
   width: 70%;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  padding: 0.25rem;
-  padding-left: 0.5rem;
+  border-bottom: 2px solid #e9ecef;
   outline: none;
-  font-size: 0.6rem;
+  font-size: 0.5rem;
   color: #156015;
+  font-style: italic;
+  ::placeholder {
+    color: #bdbfc0;
+  }
 `;
 
 const Button = styled.button`
-  background-color: #e9ecef;
+  background: transparent;
   color: #156015;
   border: none;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
   padding: 0.5rem 0.75rem;
   font-size: 0.6rem;
   cursor: pointer;
-  border-left: 1px solid rgba(21, 96, 21, 0.445);
 `;
 
 const NewTagForm = (props) => {

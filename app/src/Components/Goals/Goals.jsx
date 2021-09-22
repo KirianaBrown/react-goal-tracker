@@ -6,6 +6,7 @@ import styled from "styled-components";
 const List = styled.ul`
   list-style-type: none;
   width: 80%;
+  margin-left: 6rem;
   padding-inline-start: 0;
 `;
 
@@ -17,9 +18,14 @@ const Goals = (props) => {
   return (
     <List>
       {props.goals_data.map((el) => (
-        <GoalItem key={el.id} id={el.id} onDelete={deleteItem}>
-          {el.description}
-        </GoalItem>
+        <GoalItem
+          key={el.id}
+          id={el.id}
+          onDelete={deleteItem}
+          color={el.color}
+          category={el.category}
+          description={el.description}
+        />
       ))}
     </List>
   );
