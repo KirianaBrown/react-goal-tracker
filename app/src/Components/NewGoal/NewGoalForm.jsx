@@ -23,6 +23,8 @@ const Button = styled.button`
   border: none;
   width: 40%;
   cursor: pointer;
+  background-color: rgb(21, 96, 61);
+  color: #e9ecef;
 `;
 
 const Input = styled.input`

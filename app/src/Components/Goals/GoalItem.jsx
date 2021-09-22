@@ -4,9 +4,8 @@ const ListItem = styled.li`
   margin: 0.5rem 0rem;
   color: slategray;
   border-radius: 10px;
-  padding: 0.75rem;
-  /* border: 1px solid #e9ecef; */
-  background-color: hsla(209, 16%, 80%, 70%);
+  padding: 1rem 1rem;
+  background-color: white;
   width: 60%;
   cursor: pointer;
   font-size: 0.8rem;

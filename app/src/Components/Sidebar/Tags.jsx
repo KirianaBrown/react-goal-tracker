@@ -1,32 +1,31 @@
+import styled from "styled-components";
+
+const ListItem = styled.li`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+`;
+
+const ListItemDot = styled.div`
+  background-color: ${(props) => props.color};
+  opacity: 0.8;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
+`;
+
+const Title = styled.p`
+  color: #9e9fa0;
+  font-size: 0.6rem;
+  margin-left: 0.5rem;
+`;
+
 const Tags = (props) => {
-  const tagStyle = {
-    display: "flex",
-    alignItems: "center",
-    cursor: "pointer",
-  };
-
-  const listStyle = {
-    backgroundColor: `${props.color}`,
-    opacity: ".8",
-    height: ".5rem",
-    width: ".5rem",
-    borderRadius: "50%",
-  };
-
-  const titleStyle = {
-    // color: "salmon",
-    color: "#9e9fa0",
-    fontSize: ".6rem",
-    marginLeft: ".5rem",
-  };
-
   return (
-    <li className="tag-item" style={tagStyle}>
-      <div className="tag-item-dot" style={listStyle}></div>
-      <p className="tag-item-title" style={titleStyle}>
-        {props.title}
-      </p>
-    </li>
+    <ListItem>
+      <ListItemDot color={props.color}></ListItemDot>
+      <Title>{props.title}</Title>
+    </ListItem>
   );
 };
 
