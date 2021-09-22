@@ -22,26 +22,44 @@ const DUMMY_DATA = [
   },
 ];
 
+const TAG_COLORS = [
+  "hsl(260, 100%, 71%)",
+  "hsl(10, 100%, 71%)",
+  "hsl(160, 100%, 71%)",
+  "hsl(100, 100%, 71%)",
+  "hsl(220, 100%, 71%)",
+  "hsl(25, 100%, 71%)",
+  "hsl(280, 100%, 71%)",
+  "hsl(90, 100%, 71%)",
+  "hsl(320, 100%, 71%)",
+  "hsl(160, 100%, 71%)",
+  "hsl(350, 100%, 71%)",
+  "hsl(205, 100%, 71%)",
+  "hsl(40, 100%, 71%)",
+  "hsl(180, 100%, 71%)",
+  "hsl(130, 100%, 71%)",
+];
+
 const DUMMY_TAGS = [
   {
     id: Math.random(),
     title: "Home",
-    color: "purple",
+    color: TAG_COLORS[0],
   },
   {
     id: Math.random(),
     title: "Work",
-    color: "orange",
+    color: TAG_COLORS[1],
   },
   {
     id: Math.random(),
     title: "Personal",
-    color: "green",
+    color: TAG_COLORS[2],
   },
   {
     id: Math.random(),
     title: "Development",
-    color: "blue",
+    color: TAG_COLORS[3],
   },
 ];
 
