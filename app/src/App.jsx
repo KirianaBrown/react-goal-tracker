@@ -1,4 +1,4 @@
-import { useState, Fragment } from "react";
+import { useState, useEffect, Fragment } from "react";
 import Header from "./Components/Ui/Header";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import Content from "./Components/Content";
@@ -23,24 +23,6 @@ const DUMMY_DATA = [
     tag: "Home",
     color: TAG_COLORS[0],
   },
-  {
-    id: 2,
-    description: "Finish the Course",
-    tag: "Development",
-    color: TAG_COLORS[3],
-  },
-  {
-    id: 3,
-    description: "Build Portfolio",
-    tag: "Personal",
-    color: TAG_COLORS[2],
-  },
-  {
-    id: 4,
-    description: "Learn Gatsby!",
-    tag: "Development",
-    color: TAG_COLORS[3],
-  },
 ];
 
 const DUMMY_TAGS = [
@@ -49,30 +31,37 @@ const DUMMY_TAGS = [
     title: "Home",
     color: TAG_COLORS[0],
   },
-  {
-    id: Math.random(),
-    title: "Work",
-    color: TAG_COLORS[1],
-  },
-  {
-    id: Math.random(),
-    title: "Personal",
-    color: TAG_COLORS[2],
-  },
-  {
-    id: Math.random(),
-    title: "Development",
-    color: TAG_COLORS[3],
-  },
 ];
 
 const App = () => {
-  const [goalsData, setGoalsData] = useState(DUMMY_DATA);
-  const [tags, setTags] = useState(DUMMY_TAGS);
+  // const [goalsData, setGoalsData] = useState(DUMMY_DATA);
+  // const [tags, setTags] = useState(DUMMY_TAGS);
+
+  const [tags, setTags] = useState(() => {
+    // getting stored value
+    const saved = localStorage.getItem("tags");
+    const initialValue = JSON.parse(saved);
+    return initialValue || DUMMY_TAGS;
+  });
+
+  const [goalsData, setGoalsData] = useState(() => {
+    // getting stored value
+    const saved = localStorage.getItem("goals");
+    const initialValue = JSON.parse(saved);
+    return initialValue || DUMMY_DATA;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("tags", JSON.stringify(tags));
+  }, [tags]);
+
+  useEffect(() => {
+    localStorage.setItem("goals", JSON.stringify(goalsData));
+  }, [goalsData]);
 
   const onAddNewGoalHandler = (newGoalItem) => {
-    const index = DUMMY_TAGS.findIndex((tag) => tag.title === newGoalItem.tag);
-    const tagColor = DUMMY_TAGS[index].color;
+    const index = tags.findIndex((tag) => tag.title === newGoalItem.tag);
+    const tagColor = tags[index].color;
 
     const new_item = {
       id: Math.random(),
@@ -95,7 +84,6 @@ const App = () => {
 
   // TAGS
   const onAddNewTag = (new_tag) => {
-    // index into array of colors to get color for tag (next)
     const index = Object.keys(tags).length;
 
     // create a new TAG object
