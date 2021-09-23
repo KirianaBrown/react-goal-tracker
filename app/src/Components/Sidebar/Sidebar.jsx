@@ -28,9 +28,9 @@ const All = styled.button`
   background: transparent;
   outline: none;
   cursor: pointer;
-  color: inherit;
+  color: hsl(120, 23%, 41%);
   font-size: 0.6rem;
-  margin-left: 0.6rem;
+  margin-left: -0.3rem;
 `;
 
 const Sidebar = (props) => {

@@ -26,7 +26,7 @@ const DeleteButton = styled.button`
   margin-bottom: 0.25rem;
   border: none;
   background-color: transparent;
-  color: hsl(6, 93%, 81%);
+  color: hsl(120, 53%, 81%);
   margin-right: 2rem;
   cursor: pointer;
 `;
