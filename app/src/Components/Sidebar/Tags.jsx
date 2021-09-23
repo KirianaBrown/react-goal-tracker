@@ -36,8 +36,12 @@ const Tags = (props) => {
     props.onDeleteTagHandler(props.title);
   };
 
+  const selectedTagHandler = () => {
+    props.onSelectedTagHandler(props.title);
+  };
+
   return (
-    <ListItem>
+    <ListItem onClick={selectedTagHandler}>
       <div style={{ display: "flex", alignItems: "center" }}>
         <ListItemDot color={props.color}></ListItemDot>
         <Title>{props.title}</Title>

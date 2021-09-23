@@ -23,6 +23,16 @@ const List = styled.ul`
   padding-inline-start: 1rem;
 `;
 
+const All = styled.button`
+  border: none;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+  color: inherit;
+  font-size: 0.6rem;
+  margin-left: 0.6rem;
+`;
+
 const Sidebar = (props) => {
   const onAddNewTagHandler = (tag) => {
     if (tag.length > 0) {
@@ -30,16 +40,22 @@ const Sidebar = (props) => {
     }
   };
 
+  const onSelectedAllHandler = () => {
+    props.onSelectedAll();
+  };
+
   return (
     <Aside>
       <Heading>Categories</Heading>
       <List>
+        <All onClick={onSelectedAllHandler}>All</All>
         {props.tags.map((tag) => (
           <Tags
             key={tag.id}
             title={tag.title}
             color={tag.color}
             onDeleteTagHandler={props.onDeleteTagHandler}
+            onSelectedTagHandler={props.onSelectedTagHandler}
           />
         ))}
       </List>

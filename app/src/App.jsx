@@ -28,7 +28,7 @@ const DUMMY_DATA = [
 const DUMMY_TAGS = [
   {
     id: Math.random(),
-    title: "Home",
+    title: "All",
     color: TAG_COLORS[0],
   },
 ];
@@ -36,6 +36,7 @@ const DUMMY_TAGS = [
 const App = () => {
   // const [goalsData, setGoalsData] = useState(DUMMY_DATA);
   // const [tags, setTags] = useState(DUMMY_TAGS);
+  const [selectedTag, setSelectedTag] = useState("");
 
   const [tags, setTags] = useState(() => {
     // getting stored value
@@ -108,6 +109,18 @@ const App = () => {
     });
   };
 
+  const onSelectedTagHandler = (tagName) => {
+    console.log(`Selected Tag: ${tagName}`);
+    if (tagName) {
+      setSelectedTag(tagName);
+    }
+  };
+
+  const onSelectedAll = () => {
+    console.log("all has been clicked");
+    setSelectedTag("All");
+  };
+
   return (
     <Fragment>
       <Header />
@@ -116,12 +129,15 @@ const App = () => {
           tags={tags}
           onAddNewTag={onAddNewTag}
           onDeleteTagHandler={onDeleteTagHandler}
+          onSelectedTagHandler={onSelectedTagHandler}
+          onSelectedAll={onSelectedAll}
         />
         <Content
           onAddNewGoal={onAddNewGoalHandler}
           goals_data={goalsData}
           onDeleteItem={onDeleteGoalHandler}
           tags={tags}
+          selectedTag={selectedTag}
         />
       </div>
     </Fragment>
