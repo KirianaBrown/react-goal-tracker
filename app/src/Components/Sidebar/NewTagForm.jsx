@@ -33,17 +33,15 @@ const NewTagForm = (props) => {
   const [newTag, setNewTag] = useState("");
 
   const setNewTagHandler = (e) => {
-    const value = e.target.value;
-
-    if (value.length > 0) {
-      setNewTag(value);
+    if (e.target.value === "" || e.target.value.match(/^[1-9]\d*\.?\d*$/)) {
+      setNewTag("");
+    } else {
+      setNewTag(e.target.value);
     }
   };
 
   const addNewTagHandler = (e) => {
     e.preventDefault();
-    console.log("New Tag to be added");
-
     props.onAddNewTag(newTag);
 
     setNewTag("");

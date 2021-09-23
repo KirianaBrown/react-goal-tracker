@@ -29,8 +29,7 @@ const Tag = styled.h6`
 
 const GoalItem = (props) => {
   const onClickDeleteHandler = () => {
-    // props.onDelete(props.id);
-    console.log(props.color);
+    props.onDelete(props.id);
   };
 
   return (
