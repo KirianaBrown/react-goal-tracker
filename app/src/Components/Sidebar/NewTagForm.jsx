@@ -33,7 +33,11 @@ const NewTagForm = (props) => {
   const [newTag, setNewTag] = useState("");
 
   const setNewTagHandler = (e) => {
-    if (e.target.value === "" || e.target.value.match(/^[1-9]\d*\.?\d*$/)) {
+    if (
+      e.target.value === "" ||
+      e.target.value.match(/^[1-9]\d*\.?\d*$/) ||
+      e.target.value.trim().length === 0
+    ) {
       setNewTag("");
     } else {
       setNewTag(e.target.value);

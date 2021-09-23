@@ -31,7 +31,11 @@ const Input = styled.input`
   width: 90%;
   padding: 0.5rem;
   border-radius: 5px;
-  border: transparent;
+  outline: none;
+  border: 1px solid ${(props) => (props.inValid ? "red" : "transparent")};
+  &:focus {
+    outline: none;
+  }
 `;
 
 const Div = styled.div`
@@ -40,14 +44,21 @@ const Div = styled.div`
 
 const NewGoalForm = (props) => {
   const [newGoal, setNewGoal] = useState("");
-  const [newTag, setNewTag] = useState(props.tags[0]);
+  const [isValid, setIsValid] = useState(true);
+  const [newTag, setNewTag] = useState("Home");
 
   const onInputChangeHandler = (e) => {
     // setNewGoal(e.target.value);
-    if (e.target.value === "" || e.target.value.match(/^[1-9]\d*\.?\d*$/)) {
+    if (
+      e.target.value === "" ||
+      e.target.value.match(/^[1-9]\d*\.?\d*$/) ||
+      e.target.value.trim().length === 0
+    ) {
       setNewGoal("");
+      setIsValid(false);
     } else {
       setNewGoal(e.target.value);
+      setIsValid(true);
     }
   };
 
@@ -76,6 +87,7 @@ const NewGoalForm = (props) => {
           onChange={onInputChangeHandler}
           value={newGoal}
           placeholder="Your goal"
+          inValid={!isValid}
         />
       </Div>
       <Div>
