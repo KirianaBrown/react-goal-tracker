@@ -1,8 +1,8 @@
 ### 🚀 React Goal Tracker
 
-<h1 align="center">
+<div display="flex" align="center">
 <img src="./app/public/favicon.png">
-Track your Goals with this handy little react app.
-<h1>
+<h1>Track your Goals with this handy little react app.</h1>
+</div>
 
 <hr>
