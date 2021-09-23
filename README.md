@@ -7,7 +7,7 @@
 
 <hr>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/1a129352-2ed6-4732-ad42-de8d5d7703d2/deploy-status)](https://app.netlify.com/sites/track-your-goals-with-us/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1a129352-2ed6-4732-ad42-de8d5d7703d2/deploy-status)](https://app.netlify.com/sites/track-your-goals/deploys)
 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
