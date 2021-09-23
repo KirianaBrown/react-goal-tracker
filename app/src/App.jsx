@@ -20,25 +20,25 @@ const DUMMY_DATA = [
   {
     id: 1,
     description: "Learn React!",
-    category: "Home",
+    tag: "Home",
     color: TAG_COLORS[0],
   },
   {
     id: 2,
     description: "Finish the Course",
-    category: "Development",
+    tag: "Development",
     color: TAG_COLORS[3],
   },
   {
     id: 3,
     description: "Build Portfolio",
-    category: "Personal",
+    tag: "Personal",
     color: TAG_COLORS[2],
   },
   {
     id: 4,
     description: "Learn Gatsby!",
-    category: "Development",
+    tag: "Development",
     color: TAG_COLORS[3],
   },
 ];
@@ -70,10 +70,15 @@ const App = () => {
   const [goalsData, setGoalsData] = useState(DUMMY_DATA);
   const [tags, setTags] = useState(DUMMY_TAGS);
 
-  const onAddNewGoalHandler = (new_goal_item) => {
+  const onAddNewGoalHandler = (newGoalItem) => {
+    const index = DUMMY_TAGS.findIndex((tag) => tag.title === newGoalItem.tag);
+    const tagColor = DUMMY_TAGS[index].color;
+
     const new_item = {
       id: Math.random(),
-      description: new_goal_item,
+      description: newGoalItem.title,
+      tag: newGoalItem.tag,
+      color: tagColor,
     };
 
     setGoalsData((prevState) => {
@@ -88,15 +93,36 @@ const App = () => {
     });
   };
 
+  // TAGS
+  const onAddNewTag = (new_tag) => {
+    // index into array of colors to get color for tag (next)
+    const index = Object.keys(tags).length;
+
+    // create a new TAG object
+    const newTagColor = TAG_COLORS[index];
+
+    // create new object
+    const newTag = {
+      id: Math.random(),
+      title: new_tag,
+      color: newTagColor,
+    };
+
+    setTags((prevState) => {
+      return [...prevState, newTag];
+    });
+  };
+
   return (
     <Fragment>
       <Header />
       <div className="container">
-        <Sidebar tags={tags} />
+        <Sidebar tags={tags} onAddNewTag={onAddNewTag} />
         <Content
           onAddNewGoal={onAddNewGoalHandler}
           goals_data={goalsData}
           onDeleteItem={onDeleteGoalHandler}
+          tags={tags}
         />
       </div>
     </Fragment>

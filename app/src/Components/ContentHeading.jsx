@@ -17,8 +17,9 @@ const Div = styled.div`
   align-items: center;
 `;
 
-const SubHeading = styled.h6`
+const SubHeading = styled.p`
   color: rgb(21, 95, 21);
+  font-size: 0.8rem;
 `;
 
 const ContentHeading = () => {

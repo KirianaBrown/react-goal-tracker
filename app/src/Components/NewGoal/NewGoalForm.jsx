@@ -40,16 +40,30 @@ const Div = styled.div`
 
 const NewGoalForm = (props) => {
   const [newGoal, setNewGoal] = useState("");
+  const [newTag, setNewTag] = useState(props.tags[0]);
 
   const onInputChangeHandler = (e) => {
-    setNewGoal(e.target.value);
+    // setNewGoal(e.target.value);
+    if (e.target.value === "" || e.target.value.match(/^[1-9]\d*\.?\d*$/)) {
+      setNewGoal("");
+    } else {
+      setNewGoal(e.target.value);
+    }
+  };
+
+  const onSelectChangeHandler = (e) => {
+    setNewTag(e.target.value);
   };
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
 
     if (newGoal.length > 0) {
-      props.onGetNewGoal(newGoal);
+      const newGoalItem = {
+        title: newGoal,
+        tag: newTag,
+      };
+      props.onGetNewGoal(newGoalItem);
       setNewGoal("");
     }
   };
@@ -65,11 +79,10 @@ const NewGoalForm = (props) => {
         />
       </Div>
       <Div>
-        <Select>
-          <option>Home</option>
-          <option>Home</option>
-          <option>Home</option>
-          <option>Home</option>
+        <Select onChange={onSelectChangeHandler}>
+          {props.tags.map((tag) => (
+            <option key={tag.id}>{tag.title}</option>
+          ))}
         </Select>
       </Div>
       <Button type="submit">Add Goal</Button>

@@ -7,7 +7,7 @@ const Content = (props) => {
   return (
     <Wrapper>
       <ContentHeading />
-      <NewGoal onAddNewGoal={props.onAddNewGoal} />
+      <NewGoal onAddNewGoal={props.onAddNewGoal} tags={props.tags} />
       <Goals goals_data={props.goals_data} onDeleteItem={props.onDeleteItem} />
     </Wrapper>
   );

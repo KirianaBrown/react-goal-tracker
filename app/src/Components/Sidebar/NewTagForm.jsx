@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useState } from "react";
 
 const Form = styled.form`
   display: flex;
@@ -29,9 +30,33 @@ const Button = styled.button`
 `;
 
 const NewTagForm = (props) => {
+  const [newTag, setNewTag] = useState("");
+
+  const setNewTagHandler = (e) => {
+    const value = e.target.value;
+
+    if (value.length > 0) {
+      setNewTag(value);
+    }
+  };
+
+  const addNewTagHandler = (e) => {
+    e.preventDefault();
+    console.log("New Tag to be added");
+
+    props.onAddNewTag(newTag);
+
+    setNewTag("");
+  };
+
   return (
-    <Form>
-      <Input type="text" placeholder="New Category" />
+    <Form onSubmit={addNewTagHandler}>
+      <Input
+        type="text"
+        placeholder="New Category"
+        onChange={setNewTagHandler}
+        value={newTag}
+      />
       <Button type="submit">Add</Button>
     </Form>
   );

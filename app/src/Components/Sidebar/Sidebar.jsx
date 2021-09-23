@@ -24,6 +24,12 @@ const List = styled.ul`
 `;
 
 const Sidebar = (props) => {
+  const onAddNewTagHandler = (tag) => {
+    if (tag.length > 0) {
+      props.onAddNewTag(tag);
+    }
+  };
+
   return (
     <Aside>
       <Heading>Categories</Heading>
@@ -32,7 +38,7 @@ const Sidebar = (props) => {
           <Tags key={tag.id} title={tag.title} color={tag.color} />
         ))}
       </List>
-      <NewTagForm />
+      <NewTagForm onAddNewTag={onAddNewTagHandler} />
     </Aside>
   );
 };

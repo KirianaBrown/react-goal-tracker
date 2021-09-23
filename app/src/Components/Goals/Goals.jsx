@@ -23,7 +23,7 @@ const Goals = (props) => {
           id={el.id}
           onDelete={deleteItem}
           color={el.color}
-          category={el.category}
+          tag={el.tag}
           description={el.description}
         />
       ))}

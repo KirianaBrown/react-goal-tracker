@@ -18,7 +18,7 @@ const Description = styled.h4`
   font-size: 1rem;
 `;
 
-const Category = styled.h6`
+const Tag = styled.h6`
   padding: 0rem;
   margin: 0rem;
   margin-top: 0.5rem;
@@ -36,7 +36,7 @@ const GoalItem = (props) => {
   return (
     <ListItem onClick={onClickDeleteHandler} color={props.color}>
       <Description>{props.description}</Description>
-      <Category>{props.category}</Category>
+      <Tag>{props.tag}</Tag>
     </ListItem>
   );
 };
