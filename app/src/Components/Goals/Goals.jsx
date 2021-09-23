@@ -8,6 +8,11 @@ const List = styled.ul`
   width: 80%;
   margin-left: 6rem;
   padding-inline-start: 0;
+
+  @media only screen and (max-width: 500px) {
+    width: 100%;
+    margin-left: 1rem;
+  }
 `;
 
 const Goals = (props) => {

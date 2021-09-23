@@ -5,10 +5,13 @@ import Tags from "./Tags";
 
 const Aside = styled.aside`
   padding-left: 1rem;
-  padding-bottom: 1rem;
   color: #9e9fa0;
   border-bottom: 1px solid #d6d7da;
   border-right: 1px solid #d6d7da;
+
+  @media only screen and (max-width: 500px) {
+    padding-left: 0.1rem;
+  }
 `;
 
 const Heading = styled.h6`
@@ -28,7 +31,7 @@ const All = styled.button`
   background: transparent;
   outline: none;
   cursor: pointer;
-  color: hsl(120, 23%, 41%);
+  color: #518151;
   font-size: 0.6rem;
   margin-left: -0.3rem;
 `;

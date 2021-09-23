@@ -5,16 +5,38 @@ const Image = styled.img`
   margin-right: 2rem;
   width: 14rem;
   height: 14rem;
+
+  @media only screen and (max-width: 500px) {
+    width: 8rem;
+    height: 8rem;
+  }
 `;
 
 const Heading = styled.h3`
   color: #abacad;
   width: 60%;
+
+  @media only screen and (max-width: 800px) {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+  }
+  @media only screen and (max-width: 500px) {
+    font-size: 0.6rem;
+    margin-right: 0.5rem;
+    width: 80%;
+  }
 `;
 
 const Div = styled.div`
   display: flex;
   align-items: center;
+
+  @media only screen and (max-width: 500px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+  }
 `;
 
 const SubHeading = styled.p`

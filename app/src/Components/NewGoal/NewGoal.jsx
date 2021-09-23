@@ -7,6 +7,11 @@ const Div = styled.div`
   border-radius: 15px;
   border: 1px solid #e9ecef;
   box-shadow: 5px 2px 10px #d2d5d8;
+  @media only screen and (max-width: 500px) {
+    padding: 0.5rem 1rem;
+    border: none;
+    box-shadow: none;
+  }
 `;
 
 const NewGoal = (props) => {

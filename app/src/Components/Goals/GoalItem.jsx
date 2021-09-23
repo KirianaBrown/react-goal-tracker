@@ -10,12 +10,21 @@ const ListItem = styled.li`
   cursor: pointer;
   font-size: 0.8rem;
   border-left: 10px solid ${(props) => props.color};
+
+  @media only screen and (max-width: 500px) {
+    padding: 0.5rem 0.5rem;
+    margin-left: 0.5rem;
+  }
 `;
 
 const Description = styled.h4`
   padding: 0rem;
   margin: 0rem;
   font-size: 1rem;
+
+  @media only screen and (max-width: 500px) {
+    font-size: 0.7rem;
+  }
 `;
 
 const Tag = styled.h6`
