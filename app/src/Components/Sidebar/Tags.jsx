@@ -21,8 +21,12 @@ const Title = styled.p`
 `;
 
 const Tags = (props) => {
+  const onDeleteTag = () => {
+    props.onDeleteTagHandler(props.title);
+  };
+
   return (
-    <ListItem>
+    <ListItem onClick={onDeleteTag}>
       <ListItemDot color={props.color}></ListItemDot>
       <Title>{props.title}</Title>
     </ListItem>

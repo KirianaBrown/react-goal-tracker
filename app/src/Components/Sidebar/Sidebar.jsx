@@ -35,7 +35,12 @@ const Sidebar = (props) => {
       <Heading>Categories</Heading>
       <List>
         {props.tags.map((tag) => (
-          <Tags key={tag.id} title={tag.title} color={tag.color} />
+          <Tags
+            key={tag.id}
+            title={tag.title}
+            color={tag.color}
+            onDeleteTagHandler={props.onDeleteTagHandler}
+          />
         ))}
       </List>
       <NewTagForm onAddNewTag={onAddNewTagHandler} />

@@ -101,11 +101,22 @@ const App = () => {
     });
   };
 
+  const onDeleteTagHandler = (tagName) => {
+    setTags((prevState) => {
+      const updatedTags = prevState.filter((tag) => tag.title !== tagName);
+      return updatedTags;
+    });
+  };
+
   return (
     <Fragment>
       <Header />
       <div className="container">
-        <Sidebar tags={tags} onAddNewTag={onAddNewTag} />
+        <Sidebar
+          tags={tags}
+          onAddNewTag={onAddNewTag}
+          onDeleteTagHandler={onDeleteTagHandler}
+        />
         <Content
           onAddNewGoal={onAddNewGoalHandler}
           goals_data={goalsData}
